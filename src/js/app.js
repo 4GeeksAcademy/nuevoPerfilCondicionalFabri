@@ -33,15 +33,25 @@ function render(variables = {}) {
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
-          <h1>${variables.name ? variables.name : ""}</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h1>${variables.name ? variables.name : ""}${
+    variables.lastName ? variables.lastName : ""
+  }</h1>
+          <h2>${variables.role ? variables.role : ""}</h2>
+          <h3>${variables.city ? variables.city : ""}${
+    variables.country ? variables.country : ""
+  }</h3>
           <ul class="${variables.socialMediaPosition}">
-            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://twitter.com/${
+              variables.twitter ? variables.twitter : ""
+            }"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/${
+              variables.github ? variables.github : ""
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/li/${
+              variables.linkedin ? variables.linkedin : ""
+            }"><i class="fab fa-linkedin"></i></a></li>
             <li><a href="https://instagram.com/${
-              variables.instagram
+              variables.instagram ? variables.instagram : ""
             }"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>
@@ -56,9 +66,11 @@ window.onload = function() {
     // if includeCover is true the algorithm should show the cover image
     includeCover: true,
     // this is the image's url that will be used as a background for the profile cover
-    background: "https://images.unsplash.com/photo-1511974035430-5de47d3b95da",
+    background:
+      "https://imagenes.elpais.com/resizer/v2/RBS5QC53YICIQBIZBJW33QMOUE.jpg?auth=5b071ff9934ce71722cb4efb60aaa534e71313f16da5714e2538637efdc22df7&width=1200",
     // this is the url for the profile avatar
-    avatarURL: "https://randomuser.me/api/portraits/women/42.jpg",
+    avatarURL:
+      "https://www.shutterstock.com/image-photo/mendoza-argentina-august-4-2023-600nw-2342536151.jpg",
     // social media bar position (left or right)
     socialMediaPosition: "position-left",
     // social media usernames
